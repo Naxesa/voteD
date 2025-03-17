@@ -155,3 +155,74 @@ button {
     transform: translateY(-10px);
   }
 }
+
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--color-primary);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out;
+}
+
+.nav__logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+menu a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+menu a:hover,
+menu a.active {
+  color: #f39c12;
+  border-bottom: 2px solid #f39c12;
+}
+
+.theme__toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.theme__toggle-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Mobile Menu */
+.menu__mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  menu {
+    display: none;
+  }
+
+  .menu__mobile {
+    display: block;
+  }
+}
+
