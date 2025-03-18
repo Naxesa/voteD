@@ -226,3 +226,95 @@ menu a.active {
   }
 }
 
+
+/* .register {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.register__container {
+  width: 30rem;
+  background: var(--color-gray-0);
+  padding: 3rem;
+  border-radius: var(--radius-5);
+
+}
+.register__container H2 {
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.register form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.register form input {
+  padding: 0.7rem;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-1);
+  color: var(--color-gray-900);
+}
+.register form p > a {
+  color: var(--color-primary);
+  font-weight: 500;
+} */
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.register-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  font-family: "Jost", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.login-link {
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: blue;
+  text-decoration: none;
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background: blue;
+  font-family: "Jost", sans-serif;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.register-button:hover {
+  background: darkblue;
+}
