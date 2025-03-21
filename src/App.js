@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Results from "./pages/Results";
 import Elections from "./pages/Elections";
-import Candidate from "./pages/Candidate";
+import Candidates from "./pages/Candidates";
 import Logout from "./pages/Logout";
 import Congrats from "./pages/Congrats";
 import ElectionDetails from "./pages/ElectionDetails";
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     },
     {
       path: "elections/:id/candidates",
-      element: <Candidate />
+      element: <Candidates />
     },
     {
       path: "elections/:id",
