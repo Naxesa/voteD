@@ -1,23 +1,28 @@
-import React from 'react'
 
-const CandidateRating = ({fullName, image, voteCount, totalVotes}) => {
+import React from 'react';
+
+const CandidateRating = ({ fullname, image, voteCount, totalVotes }) => {
+  const votePercentage = totalVotes > 0 ? (voteCount / totalVotes) * 100 : 0;
+
   return (
-    <li className="result__candidate">
-        <div className="result__candidate-image">
-            <img src="{image}" alt="fullName" />
+    <li className="candidate">
+      <div className="candidate__image">
+        <img src={image} alt={fullname} />
+      </div>
+      <div className="candidate__info">
+        <div className="candidate__details">
+          <h5>{fullname}</h5>
+          <small>{`${voteCount} ${voteCount === 1 ? 'vote' : 'votes'}`}</small>
         </div>
-        <div className="result__candidate-info">
-            <h5>{fullName}</h5>
-            <small>{`${voteCount} ${voteCount === 1 ? "vote" : "votes"}`}</small>
+        <div className="candidate__rating">
+          <div className="candidate__bar">
+            <span style={{ width: `${votePercentage}%` }}></span>
+          </div>
+          <small>{votePercentage.toFixed(2)}%</small>
         </div>
-        <div className="result__container-rating">
-            <div className="result__candidate-loader">
-                <span style={{width: `${voteCount > 0 ? ((voteCount/totalVotes) * 100) : 0}%`}}></span>
-            </div>
-            <small>{`${voteCount > 0 ? ((voteCount/totalVotes) * 100).toFixed(2) : 0}%`}</small>
-        </div>
+      </div>
     </li>
-  )
-}
+  );
+};
 
-export default CandidateRating
+export default CandidateRating;
