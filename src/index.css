@@ -226,42 +226,6 @@ menu a.active {
   }
 }
 
-
-/* .register {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-}
-
-.register__container {
-  width: 30rem;
-  background: var(--color-gray-0);
-  padding: 3rem;
-  border-radius: var(--radius-5);
-
-}
-.register__container H2 {
-  margin-bottom: 2rem;
-  color: var(--color-primary);
-}
-
-.register form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.register form input {
-  padding: 0.7rem;
-  background: var(--color-gray-100);
-  border-radius: var(--radius-1);
-  color: var(--color-gray-900);
-}
-.register form p > a {
-  color: var(--color-primary);
-  font-weight: 500;
-} */
-
 .register {
   display: flex;
   justify-content: center;
@@ -317,4 +281,310 @@ h2 {
 
 .register-button:hover {
   background: darkblue;
+}
+
+/* Candidate Item */
+.candidate {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.candidate:hover {
+  transform: scale(1.02);
+}
+
+/* Candidate Image */
+.candidate__image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4caf50;
+}
+
+/* Candidate Info */
+.candidate__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Candidate Details */
+.candidate__details h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.candidate__details small {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Rating Bar */
+.candidate__rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.candidate__bar {
+  width: 120px;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.candidate__bar span {
+  display: block;
+  height: 100%;
+  background: #4caf50;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Main Container */
+.result {
+  width: 100%;
+  max-width: 700px; /* Adjust width */
+  margin: 20px auto;
+  padding: 15px;
+  padding-top: 5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.result__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures title & flag are aligned */
+  gap: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+/* Title Styling */
+.result__header h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  flex-grow: 1; /* Makes title take available space */
+}
+
+/* Flag (Thumbnail) Styling */
+.result__header-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+}
+
+.result__header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures correct scaling */
+}
+
+/* Candidates List */
+.result__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Candidate Row */
+.result__candidate {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.result__candidate:last-child {
+  border-bottom: none;
+}
+
+/* Candidate Image */
+.result__candidate-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Candidate Info */
+.result__candidate-info {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Candidate Name */
+.result__candidate-info h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Voting Bar */
+.result__candidate-rating {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.result__candidate-loader {
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.result__candidate-loader span {
+  display: block;
+  height: 100%;
+  background: #4caf50; /* Green progress bar */
+  transition: width 0.5s ease-in-out;
+}
+
+.result__candidate-rating small {
+  font-size: 12px;
+  color: #555;
+}
+
+
+/* Main Button Styling */
+.btn-primary {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #007bff; /* Blue color */
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  margin-top: 15px;
+}
+
+/* Button Hover Effect */
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+/* Full-width button for smaller screens */
+.btn-primary.full {
+  width: 100%;
+  text-align: center;
+}
+
+/* Candidates Page Styling */
+.candidates {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Header Styling */
+.candidates__header {
+  margin-bottom: 30px;
+}
+
+.candidates__header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 2.5rem;
+}
+
+.candidates__header p {
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Candidate List Container */
+.candidates__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Candidate Card Styling - Scoped to Avoid Conflicts */
+.candidate {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.candidate:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Candidate Name - Scoped */
+.candidate h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Candidate Motto - Scoped */
+.candidate small {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Vote Button - Scoped */
+.candidate .btn-primary {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-family: "Jost", sans-serif;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.candidate .btn-primary:hover {
+  background-color: #0056b3;
 }
