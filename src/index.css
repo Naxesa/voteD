@@ -191,11 +191,6 @@ menu a {
   transition: color 0.3s ease-in-out;
 }
 
-menu a:hover,
-menu a.active {
-  color: #f39c12;
-  border-bottom: 2px solid #f39c12;
-}
 
 .theme__toggle-btn {
   background: none;
@@ -212,7 +207,7 @@ menu a.active {
 }
 
 /* Mobile Menu */
-.menu__mobile {
+ .menu__mobile {
   display: none;
 }
 
@@ -224,7 +219,102 @@ menu a.active {
   .menu__mobile {
     display: block;
   }
+} */ */
+
+/* NAVBAR CONTAINER */
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Fixes it at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Set a fixed height */
+  background-color: var(--color-gray-900);
+  padding: 0 20px;
+  z-index: 1000; /* Ensures navbar stays on top */
+  transition: var(--transition);
 }
+
+/* LOGO */
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-gray-0);
+  text-decoration: none;
+}
+
+/* MENU STYLES */
+menu {
+  display: flex;
+  gap: 20px;
+}
+
+menu a {
+  color: var(--color-gray-0);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+menu a:hover {
+  color: var(--color-gray-200);
+}
+
+
+/* THEME TOGGLE BUTTON */
+.theme__toggle-btn {
+  background: none;
+  border: none;
+  color: var(--color-gray-0);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme__toggle-btn:hover {
+  color: var(--color-gray-300);
+}
+
+/* MOBILE MENU TOGGLE */
+.menu__mobile {
+  display: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .menu__mobile {
+      display: block;
+  }
+
+  menu {
+      display: none; /* Hide menu initially */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: var(--color-gray-600);
+      padding: 20px;
+      text-align: center;
+  }
+
+  menu.menu__open {
+      display: flex;
+  }
+
+  menu a {
+      display: block;
+      padding: 10px 0;
+  }
+}
+
+/* PREVENT OVERLAPPING CONTENT */
+body {
+  padding-top: 60px; /* Ensures content doesn't hide under navbar */
+}
+
 
 .register {
   display: flex;
@@ -232,7 +322,7 @@ menu a.active {
   align-items: center;
   min-height: 100vh;
   background-color: #f4f4f4;
-}
+} */
 
 .register-container {
   background: white;
@@ -588,3 +678,460 @@ h2 {
 .candidate .btn-primary:hover {
   background-color: #0056b3;
 }
+
+/* .modal  {
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+  place-items: center;
+  display: grid;
+}
+
+.model__content {
+  background: var(--color-gray-0);
+  max-width: 35rem;
+  border-radius: var(--radius-5);
+  overflow: space-between;
+
+}
+
+.modal__header{
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.modal h4 {
+  color: white;
+}
+
+.modal__headre button {
+  background: transparent;
+  font-size: 1.8rem;
+  color: white;
+} */
+/* Modal Container */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay background */
+  backdrop-filter: blur(5px); /* Slight blur effect */
+}
+
+/* Modal Content */
+.modal__content__vote-content {
+  background: white;
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Heading */
+h5 {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Confirm Vote Section */
+.confirm__vote {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.confirm__vote img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%; /* Makes image circular */
+  border: 3px solid #007bff;
+}
+
+/* Candidate Details */
+h2 {
+  font-size: 22px;
+  color: #222;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Vote Buttons */
+.confirm__vote-cta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Cancel Button */
+.btn {
+  background: #ccc;
+  color: black;
+}
+
+/* Confirm Button */
+.btn.primary {
+  background: #007bff;
+  font-family: "Jost", sans-serif;
+  color: white;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.congrats {
+  padding: 8rem;
+  height: 100vh;
+  text-align: center;
+}
+
+.congrats p {
+  margin: 0.5rem 0 1.2rem;
+}
+
+
+/* Ensure section has enough space below the navbar */
+.elections {
+  padding: 2rem 0;
+}
+
+/* Container styling */
+.elections__container {
+  width: var(--container-w-lg);
+  margin: 0 auto;
+}
+
+/* Header: Align text & button properly */
+.elections__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Button consistency */
+.btn.primary {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius-2);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Grid layout for elections */
+.election__menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+
+.elections-grid {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  height: 100vh;
+  padding: 100px 20px 20px; /* Adjusted top padding for navbar */
+  max-width: 1200px;
+}
+
+/* Election Card */
+.election-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.election-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Section */
+.election-card__image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.election-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Details Section */
+.election-card__details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.election-card__title {
+  font-size: 1.2rem;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.election-card__title:hover {
+  text-decoration: underline;
+}
+
+/* Description */
+.election-card__description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Action Buttons */
+.election-card__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-small {
+  font-size: 0.8rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .elections-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      padding-top: 120px; /* Adjust navbar spacing */
+  }
+}
+
+
+.electioncandidate {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: var(--radius-2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.electioncandidate:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.electioncandidate__image {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+}
+
+.electioncandidate__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.electioncandidate h5 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.electioncandidate small {
+  color: var(--color-gray-600);
+  display: block;
+}
+
+.electioncandidate__btn {
+  background: var(--color-danger);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: var(--radius-2);
+  transition: var(--transition);
+}
+
+.electioncandidate__btn:hover {
+  background: rgb(200, 50, 50);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .electioncandidate {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+.electiondetails {
+  margin-top: 6rem; /* Prevent navbar overlap */
+  padding: 2rem 0;
+}
+
+.electiondetails__container {
+  width: var(--container-w-lg);
+  margin: 0 auto;
+}
+
+.electiondetails h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.electiondetails p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-gray-600);
+  margin-bottom: 2rem;
+}
+
+.electiondetails__image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.electiondetails__image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: var(--radius-2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid for candidates */
+.electiondetails__candidates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Voters Section */
+.voters {
+  margin-top: 3rem;
+}
+
+.voters h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Voters Table */
+.voters__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+}
+
+.voters__table th,
+.voters__table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.voters__table th {
+  background: var(--color-primary);
+  color: white;
+}
+
+.voters__table tr:hover {
+  background: var(--color-gray-100);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .electiondetails__candidates {
+    grid-template-columns: 1fr; /* Full width on smaller screens */
+  }
+}
+
