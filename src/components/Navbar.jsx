@@ -24,7 +24,7 @@ const Navbar = () => {
       <menu className={menuOpen ? "menu__open" : ""}>
         <NavLink to="/elections">Elections</NavLink>
         <NavLink to="/results">Results</NavLink>
-        <NavLink to="/logout">Logout</NavLink>
+        <NavLink to="/">Logout</NavLink>
       </menu>
       <button
         className="theme__toggle-btn"

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { candidates } from '../data'; 
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { UiActions } from '../store/ui-slice';
 
 const ConfirmVote = () => {
@@ -48,7 +49,7 @@ const ConfirmVote = () => {
 
                 <div className="confirm__vote-cta">
                     <button className="btn" onClick={closeCandidateModal}>Cancel</button>
-                    <button className="btn primary">Confirm</button>
+                    <Link to='/congrats'><button className="btn primary">Confirm</button></Link>
                 </div>
             </div>
         </section>

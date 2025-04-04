@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 const Login = () => {
+
+  // const { userLoggedIn } = useAuth()
   const [userData, setUserData] = useState ({fullname:'', email:'', password:'', password2:''})
   
   const changeInputHandler = (e) => {
@@ -11,11 +15,20 @@ const Login = () => {
 
   }
 
+  const registerVoter = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(``)
+    } catch (error) {
+      
+    }
+  }
+
   return (
     <section className="register">
       <div className="register-container">
         <h2>Login</h2>
-        <form>
+        <form onSubmit={registerVoter} >
           <input 
             type="email" 
             name="EmailAddress"  onChange={changeInputHandler}
@@ -24,7 +37,7 @@ const Login = () => {
           />
           <input 
             type="password" 
-            name="password" onChange={changeInputHandler}
+            name="password" onChange={changeInputHandler} autoComplete='true' autoFocus
             placeholder="Password" 
             className="input-field"
           />
